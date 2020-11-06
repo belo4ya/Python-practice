@@ -1,20 +1,27 @@
 from p5 import *
-from star import Star
+from drop import Drop
 
-stars = []
+drops = []
+i = 0
 
 
 def setup():
-    size(600, 600)
-    stars.extend((Star() for _ in range(800)))
+    size(640, 360)
+    drops.extend((Drop() for _ in range(400)))
 
 
 def draw():
-    background(0)
-    translate(width / 2, height / 2)
-    for s in stars:
-        s.update()
-        s.show()
+    background(230, 230, 230)
+    for drop in drops:
+        drop.fall()
+        drop.show()
+
+    global i
+    if i > 180:
+        no_loop()
+        return
+    i += 1
+    save_frame("gif/anim.png")
 
 
 if __name__ == '__main__':
