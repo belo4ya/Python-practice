@@ -36,13 +36,17 @@ def solution_2(n=1000):
 
 
 def solution_3(n=1000):
+    """
+    кроме предыдущего, d можно вычислить по формуле:
+    d = pow(a ** 3 + b ** 3 - c ** 3, 1/3)
+    """
     result = []
     for a in range(1, n + 1):
         for b in range(1, n + 1):
             for c in range(1, n + 1):
                 left = a ** 3 + b ** 3 - c ** 3
                 if 0 < left <= n ** 3:
-                    d = round(pow(left, 1 / 3))
+                    d = round(pow(left, 1/3))
                     if left == d ** 3:
                         # print(a, b, c, d)
                         result.append((a, b, c, d))
