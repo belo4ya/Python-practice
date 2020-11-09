@@ -2,8 +2,6 @@
 # вывести все положительные целочисленные решения уравнения a3 + b3 = c3 + d3,
 # где a, b, c и d - целые числа в диапазоне от 1 до 1000.
 
-import math
-
 
 def solution_1(n=1000):
     """
@@ -64,9 +62,8 @@ def solution_4(n=1000):
             res = c ** 3 + d ** 3
 
             if map_.get(res) is None:
-                map_[res] = [(c, d)]
-            else:
-                map_[res].append((c, d))
+                map_[res] = []
+            map_[res].append((c, d))
 
     for a in range(1, n + 1):
         for b in range(1, n + 1):
@@ -78,30 +75,24 @@ def solution_4(n=1000):
 
 
 def solution_5(n=1000):
+    """
+    но если мы построили хеш со всеми парами (с, d), генерировать пары (а, b)
+    не нужно - каждая пара (а, b) уже присутствует в хеше
+    """
     result = []
     map_ = {}
+    for c in range(1, n + 1):
+        for d in range(1, n + 1):
+            res = c ** 3 + d ** 3
 
+            if map_.get(res) is None:
+                map_[res] = []
+            map_[res].append((c, d))
 
-if __name__ == '__main__':
-    n = 30
-    a = solution_1(n)
-    b = solution_2(n)
-    c = solution_3(n)
-    d = solution_4(n)
+    for pairs in map_.values():
+        for pair_ab in pairs:
+            for pair_cd in pairs:
+                # print(pair_ab[0], pair_ab[1], pair_cd[0], pair_cd[1])
+                result.append((pair_ab[0], pair_ab[1], pair_cd[0], pair_cd[1]))
 
-    print("\nlen(a) =", len(a), "\nlen(b) =", len(b),
-          "\nlen(c) =", len(c), "\nlen(d) =", len(d))
-
-    a = set(a)
-    b = set(b)
-    c = set(c)
-    d = set(d)
-    print("\nlen(set(a)) =", len(a), "\nlen(set(b)) =", len(b),
-          "\nlen(set(c)) =", len(c), "\nlen(set(d)) =", len(d))
-
-    print("\na ^ b = ", a ^ b)
-    print("a ^ c = ", a ^ c)
-    print("b ^ c = ", b ^ c)
-    print("d ^ c = ", d ^ c)
-    for i in a ^ c:
-        print(i[0] ** 3 + i[1] ** 3 == i[2] ** 3 + i[3] ** 3)
+    return result
