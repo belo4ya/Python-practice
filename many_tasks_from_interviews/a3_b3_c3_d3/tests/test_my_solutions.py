@@ -1,4 +1,4 @@
-from ..solution import solution_1, solution_2, solution_3, solution_4, solution_5
+from solution import solution_1, solution_2, solution_3, solution_4, solution_5
 
 
 class TestSolutions:
