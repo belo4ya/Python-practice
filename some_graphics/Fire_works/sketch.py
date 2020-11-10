@@ -1,24 +1,12 @@
 import pyglet
 import random
-from particle import Particle
-
-
-def load_particles(batch):
-    particles = []
-    x = 0
-    for i in range(3):
-        p = Particle(x + 50, 200, random.randint(0, 255), False, batch)
-        f = Particle(x + 50, 200, random.randint(0, 255), True, batch)
-        particles.append(p)
-        particles.append(f)
-
-    return particles
+from firework import Firework
 
 
 window = pyglet.window.Window(400, 400)
-
 main_batch = pyglet.graphics.Batch()
-particles = load_particles(main_batch)
+
+fireworks = [Firework(main_batch)]
 
 
 @window.event
@@ -28,8 +16,13 @@ def on_draw():
 
 
 def update(dt):
-    for p in particles:
-        p.update()
+    if random.random() < 0.03:
+        fireworks.append(Firework(main_batch))
+
+    for f in fireworks:
+        f.update()
+        if f.done():
+            fireworks.remove(f)
 
 
 if __name__ == '__main__':
