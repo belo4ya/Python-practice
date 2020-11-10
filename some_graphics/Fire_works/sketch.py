@@ -7,8 +7,10 @@ def load_particles(batch):
     particles = []
     x = 0
     for i in range(3):
-        p = Particle(x + 50, 0, random.randint(0, 255), batch)
+        p = Particle(x + 50, 200, random.randint(0, 255), False, batch)
+        f = Particle(x + 50, 200, random.randint(0, 255), True, batch)
         particles.append(p)
+        particles.append(f)
 
     return particles
 
