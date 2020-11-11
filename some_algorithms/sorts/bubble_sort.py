@@ -1,5 +1,10 @@
-# алгоритму 0 лет
-def bubble_sort_1(array):
+"""
+Реализация сортировки пузырьком на чистом Python.
+https://en.wikipedia.org/wiki/Bubble_sort
+"""
+
+
+def simple_bubble_sort(array):
     for i in range(len(array)):
         for j in range(len(array) - 1):
             if array[j] > array[j + 1]:
@@ -8,8 +13,7 @@ def bubble_sort_1(array):
     return array
 
 
-# алгоритму 5 лет
-def bubble_sort_2(array):
+def bubble_sort(array):
     for i in range(len(array) - 1):
         for j in range(len(array) - 1 - i):
             if array[j] > array[j + 1]:
@@ -18,8 +22,7 @@ def bubble_sort_2(array):
     return array
 
 
-# это все еще сортировка пузырьком
-def bubble_sort_3(array):
+def awesome_bubble_sort(array):
     for i in range(len(array) - 1):
         f = False
         for j in range(len(array) - 1 - i):
