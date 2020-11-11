@@ -4,6 +4,7 @@ from firework import Firework
 
 
 window = pyglet.window.Window(400, 400)
+pyglet.gl.glClearColor(0.1, 0.1, 0.1, 1.0)
 main_batch = pyglet.graphics.Batch()
 
 fireworks = [Firework(main_batch)]
@@ -16,7 +17,7 @@ def on_draw():
 
 
 def update(dt):
-    if random.random() < 0.03:
+    if random.random() < 0.035:
         fireworks.append(Firework(main_batch))
 
     for f in fireworks:
