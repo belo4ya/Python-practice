@@ -1,33 +1,45 @@
-from p5 import *
+import pyglet
+import numpy as np
 
 
 class Sketch:
-    values = []
-    i = 0
+    window = pyglet.window.Window(400, 400)
+    pyglet.gl.glClearColor(0.1, 0.1, 0.1, 1.0)
+    main_batch = pyglet.graphics.Batch()
 
-    @classmethod
-    def setup(cls):
-        size(600, 600)
-        cls.values.extend((random_uniform(height) for _ in range(width)))
+    def __init__(self):
+        values = np.random.random(400) * 400
+        i = 0
 
-    @classmethod
-    def draw(cls):
-        background(0)
+    @staticmethod
+    @window.event
+    def on_draw():
+        print(1)
+        cls.window.clear()
+        cls.main_batch.draw()
 
-        if cls.i < len(cls.values):
-            stroke(255)
-            for j in range(len(cls.values) - 1 - cls.i):
-                if cls.values[j] > cls.values[j + 1]:
-                    cls.values[j], cls.values[j + 1] = cls.values[j + 1], cls.values[j]
-        else:
-            no_loop()
+    def update(self):
+        pass
 
-        cls.i += 1
-
-        for n in range(len(cls.values)):
-            stroke(255)
-            line(n, height, n, height - cls.values[n])
+    # @classmethod
+    # def draw(cls):
+    #     background(0)
+    #
+    #     if cls.i < len(cls.values):
+    #         stroke(255)
+    #         for j in range(len(cls.values) - 1 - cls.i):
+    #             if cls.values[j] > cls.values[j + 1]:
+    #                 cls.values[j], cls.values[j + 1] = cls.values[j + 1], cls.values[j]
+    #     else:
+    #         no_loop()
+    #
+    #     cls.i += 1
+    #
+    #     for n in range(len(cls.values)):
+    #         stroke(255)
+    #         line(n, height, n, height - cls.values[n])
 
 
 if __name__ == '__main__':
-    run(sketch_setup=Sketch.setup, sketch_draw=Sketch.draw)
+    pyglet.clock.schedule_interval(Sketch().update, 1 / 120.0)
+    pyglet.app.run()
