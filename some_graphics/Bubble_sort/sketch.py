@@ -5,7 +5,7 @@ window = pyglet.window.Window(400, 400)
 pyglet.gl.glClearColor(0.1, 0.1, 0.1, 1.0)
 main_batch = pyglet.graphics.Batch()
 
-bubble_sort = BubbleSort(main_batch)
+bubble_sort = BubbleSort(main_batch, window.width, window.height)
 
 
 @window.event
