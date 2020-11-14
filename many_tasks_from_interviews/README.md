@@ -61,12 +61,56 @@ def fibonacci(number):
    ```python
 iter_ = (i ** 2 if i % 2 == 0 else i for i in range(5))  # <generator object <genexpr> at 0x000002D0E5219660>
 list_ = [i ** 2 for i in range(10) if i % 2 == 0]  # [0, 4, 16, 36, 64]
-set_ = {i for i in range(10)}
+set_ = {i for i in range(0, 10, 2)}  # {0, 2, 4, 6, 8}
 dict_ = {v: k for k, v in {'a': 1, 'b': 2, 'c': 3}.items()}  # {1: 'a', 2: 'b', 3: 'c'}
    ```
+   
+   - Итератор — это сущность порождаемая функцией iter, с помощью которой происходит итерирование итерируемого объекта. 
+   Итерируемый объект — это что-то, что можно итерировать. Итератор не имеет индексов и может быть использован только один раз.
+   
+   ```python
+# реализация с помощью генераторов
 
+def infinity(step):
+    i = 0
+    while True:
+        yield i
+        i += step
+
+iter_ = infinity(10)
+next(iter_)  # 0
+next(iter_)  # 10
+next(iter_)  # 20
+   ```
+
+   ```python
+# реализация с помощью переопределения магических методов класса
+
+class Arrange:
+
+    def __init__(self, start, stop, step):
+        self.i = start
+        self.stop = stop
+        self.step = step
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.i > self.stop:
+            raise StopIteration
+
+        result = self.i
+        self.i += self.step
+        return result
+   ```
+   
 </details>
 
+<details>
+<summary> 4.  </summary>
+
+</details>
 
 3. ООП:
     - Класс — это описание того, какими свойствами и поведением будет обладать объект. А объект — это экземпляр с собственным состоянием этих свойств.
