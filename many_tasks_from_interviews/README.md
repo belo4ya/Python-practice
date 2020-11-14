@@ -218,14 +218,50 @@ class Arrange:
 
 </details>
     
+    
+<details>
+<summary><b> KISS, DRY, SOLID, CRUD, REST, SOAP </b></summary>
 
+<details>
+<summary>KISS</summary>
 
+> dsada
+</details>
 
+<details>
+<summary>DRY</summary>
 
+> dsada
+</details>
 
+<details>
+<summary>SOLID</summary>
 
+> dsada
+</details>
 
-4. Вирутуальное окружение:
-    - ```python -m venv "env"```
+<details>
+<summary>CRUD</summary>
 
-- KISS, DRY, SOLID, CRUD, REST, SOAP
+> dsada
+</details>
+
+<details>
+<summary>REST</summary>
+
+> dsada
+</details>
+
+<details>
+<summary>REST</summary>
+
+> dsada
+</details>
+
+<details>
+<summary>SOAP</summary>
+
+> dsada
+</details>
+
+</details>
