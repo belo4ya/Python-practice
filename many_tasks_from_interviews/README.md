@@ -1,4 +1,7 @@
 <details>
+<summary> <b>Python</b> </summary>
+
+<details>
 <summary> 1. Базовые типы данных </summary>
 
    - Неизменяемые:
@@ -213,6 +216,7 @@ class Arrange:
         - `__deepcopy__(self, memodict={})` - определяет поведение `copy.deepcopy()`.
 </details>
 
+</details>
     
 
 
@@ -225,4 +229,3 @@ class Arrange:
     - ```python -m venv "env"```
 
 - KISS, DRY, SOLID, CRUD, REST, SOAP
-
