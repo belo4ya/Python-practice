@@ -217,49 +217,47 @@ class Arrange:
 </details>
 
 </details>
-    
-    
+
+
+
 <details>
-<summary><b> KISS, DRY, SOLID, CRUD, REST, SOAP </b></summary>
+<summary><b> KISS, DRY, YAGNI, SOLID </b></summary>
 
 <details>
 <summary>KISS</summary>
 
-> dsada
+Принцип проектирования **KISS( **keep it simple stupid 
+(keep it simple and straightforward))** провозглашает, что простота кода – 
+превыше всего, потому что простой код – наиболее понятный. 
+
+> Патерны проектирования описывают наиболее удачные, простые и понятные 
+решения некоторых проблем. Если вы используете паттерн проектирования 
+там, где нет проблемы, которую решает данный паттерн – то вы нарушаете 
+KISS, внося ненужные усложнения в код. Если вы НЕ используете паттерн 
+проектирования там, где есть проблема, соответствующая паттерну – то 
+вы опять-таки нарушаете KISS, делая код сложнее, чем он мог бы быть.
 </details>
 
 <details>
 <summary>DRY</summary>
+
+**DRY – Don’t repeat yourself (не повторяй себя)**.
+
+> Когда вы разрабатываете крупный проект, часто приходится сталкиваться 
+с избыточной общей сложностью реализации. Люди плохо справляются с 
+управлением сложных систем, им лучше удается находить необычные решения 
+определенных задач. Самое простое решение по уменьшению сложности – 
+разделить систему на мелкие, независимые модули, которыми проще управлять.
+</details>
+
+<details>
+<summary>YAGNI</summary>
 
 > dsada
 </details>
 
 <details>
 <summary>SOLID</summary>
-
-> dsada
-</details>
-
-<details>
-<summary>CRUD</summary>
-
-> dsada
-</details>
-
-<details>
-<summary>REST</summary>
-
-> dsada
-</details>
-
-<details>
-<summary>REST</summary>
-
-> dsada
-</details>
-
-<details>
-<summary>SOAP</summary>
 
 > dsada
 </details>
