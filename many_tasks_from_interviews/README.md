@@ -1,49 +1,70 @@
 <details>
 <summary> 1. Базовые типы данных </summary>
 
-   - неизменяемые:
+   - Неизменяемые:
    ```int```, ```float```, ```complex```, ```str```, ```bytes```, ```None```, ```bool```, ```tuple```, ```frozenset```
-   - изменяемые:
+   - Изменяемые:
    ```dict```, ```list```, ```set```
         
 </details>
 
 <details>
 <summary> 2. Функциональное программирование </summary>
-
+   
    - ```lambda```, ```zip```, ```map```, ```filter```, ```reduce``` (functools)
 
-   ``` python
-   numbers = range(10)
-   squared_evens = map(lambda n: n ** 2, filter(lambda n: n % 2 == 0, numbers))
-   list(squared_evens)   # [0, 4, 16, 36, 64]
+   ```python
+numbers = range(10)
+squared_evens = map(lambda n: n ** 2, filter(lambda n: n % 2 == 0, numbers))
+list(squared_evens)   # [0, 4, 16, 36, 64]
    ```
 
-   - декораторы:
+   - Декораторы:
    
-   ``` python
-   from functools import wraps
+   ```python
+from functools import wraps
     
-   def logger(filename):
+def logger(filename):
 
-       def decorator(func):
+    def decorator(func):
 
-           @wraps(func)
-           def wrapped(*args, **kwargs):
-               result = func(*args, **kwargs)
-               with open(filename, "w+") as f:
-               f.write(str(result))
-               return result
+        @wraps(func)
+        def wrapped(*args, **kwargs):
+            result = func(*args, **kwargs)
+            with open(filename, "w+") as f:
+                f.write(str(result))
+            return result
 
-           return wrapped
+        return wrapped
 
-       return decorator
+    return decorator
    ```
     
 </details>
 
 <details>
-<summary>  </summary>
+<summary> 3. Генераторы, выражения-генераторы, иттераторы </summary>
+
+   - Генератор - это функция содержащая ключевое слово ```yield```.
+   Генераторы позволят осуществлять ленивые вычисления. Также является иттератором.
+   
+   ```python
+def fibonacci(number):
+    a = b = 1
+    for _ in range(number):
+        yield a
+        a, b = b, a + b
+   ```
+
+   - Выражения-генераторы предназначены для компактного и удобного способа генерации коллекций элементов.
+   
+   ```python
+iter_ = (i ** 2 if i % 2 == 0 else i for i in range(5))  # <generator object <genexpr> at 0x000002D0E5219660>
+list_ = [i ** 2 for i in range(10) if i % 2 == 0]  # [0, 4, 16, 36, 64]
+set_ = {i for i in range(10)}
+dict_ = {v: k for k, v in {'a': 1, 'b': 2, 'c': 3}.items()}  # {1: 'a', 2: 'b', 3: 'c'}
+   ```
+
 </details>
 
 
