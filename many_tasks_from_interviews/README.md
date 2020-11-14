@@ -1,9 +1,11 @@
 <details>
 <summary> 1. Базовые типы данных </summary>
-    - неизменяемые:
-        - ```int```, ```float```, ```complex```, ```str```, ```b""```, ```None```, ```bool```, ```tuple```, ```frozenset```
-    - изменяемые
-        - ```dict```, ```list```, ```set```
+
+   - неизменяемые:
+   ```int```, ```float```, ```complex```, ```str```, ```b""```, ```None```, ```bool```, ```tuple```, ```frozenset```
+   - изменяемые:
+   ```dict```, ```list```, ```set```
+        
 </details>
             
 2. Функциональное программирование:
