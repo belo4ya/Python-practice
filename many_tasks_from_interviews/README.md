@@ -12,9 +12,6 @@
 <summary> 2. Функциональное программирование </summary>
 
    - ```lambda```, ```zip```, ```map```, ```filter```, ```reduce``` (functools)
-   
-   <details>
-   <summary> - Пример </summary>
 
    ``` python
    numbers = range(10)
@@ -22,38 +19,32 @@
    list(squared_evens)   # [0, 4, 16, 36, 64]
    ```
 
-   </details>
+   - декораторы:
    
+   ``` python
+   from functools import wraps
+    
+   def logger(filename):
 
+       def decorator(func):
 
-   - 
+           @wraps(func)
+           def wrapped(*args, **kwargs):
+               result = func(*args, **kwargs)
+               with open(filename, "w+") as f:
+               f.write(str(result))
+               return result
+
+           return wrapped
+
+       return decorator
+   ```
     
 </details>
 
-
-
-
-
-
-dsadasd
-    - декораторы:
-    
-    ``` python
-    def logger(filename):
-
-        def decorator(func):
-
-            @wraps(func)
-            def wrapped(*args, **kwargs):
-                result = func(*args, **kwargs)
-                with open(filename, "w+") as f:
-                    f.write(str(result))
-                return result
-
-            return wrapped
-
-        return decorator
-    ```
+<details>
+<summary>  </summary>
+</details>
 
 
 3. ООП:
