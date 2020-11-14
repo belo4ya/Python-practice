@@ -10,15 +10,34 @@
 
 <details>
 <summary> 2. Функциональное программирование </summary>
+
+   - ```lambda```, ```zip```, ```map```, ```filter```, ```reduce``` (functools)
+   
+   <details>
+   <summary> - Пример </summary>
+
+   ``` python
+   numbers = range(10)
+   squared_evens = map(lambda n: n ** 2, filter(lambda n: n % 2 == 0, numbers))
+   list(squared_evens)   # [0, 4, 16, 36, 64]
+   ```
+
+   </details>
+   
+
+
+   - 
     
-    ```lambda```, ```zip```, ```map```, ```filter```, ```reduce``` (functools)
-    
-    ``` python
-    numbers = range(10)
-    squared_evens = map(lambda n: n ** 2, filter(lambda n: n % 2 == 0, numbers))
-    print(list(squared_evens))   # [0, 4, 16, 36, 64]
-    ```
+</details>
+
+
+
+
+
+
+dsadasd
     - декораторы:
+    
     ``` python
     def logger(filename):
 
@@ -35,8 +54,7 @@
 
         return decorator
     ```
-    
-</details>
+
 
 3. ООП:
     - Класс — это описание того, какими свойствами и поведением будет обладать объект. А объект — это экземпляр с собственным состоянием этих свойств.
