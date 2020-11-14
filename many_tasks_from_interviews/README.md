@@ -2,14 +2,22 @@
 <summary> 1. Базовые типы данных </summary>
 
    - неизменяемые:
-   ```int```, ```float```, ```complex```, ```str```, ```b""```, ```None```, ```bool```, ```tuple```, ```frozenset```
+   ```int```, ```float```, ```complex```, ```str```, ```bytes```, ```None```, ```bool```, ```tuple```, ```frozenset```
    - изменяемые:
    ```dict```, ```list```, ```set```
         
 </details>
-            
-2. Функциональное программирование:
-    - ```lambda```, ```zip```, ```map```, ```filter```, ```reduce``` (functools)
+
+<details>
+<summary> 2. Функциональное программирование </summary>
+    
+    ```lambda```, ```zip```, ```map```, ```filter```, ```reduce``` (functools)
+    
+    ``` python
+    numbers = range(10)
+    squared_evens = map(lambda n: n ** 2, filter(lambda n: n % 2 == 0, numbers))
+    print(list(squared_evens))   # [0, 4, 16, 36, 64]
+    ```
     - декораторы:
     ``` python
     def logger(filename):
@@ -27,6 +35,8 @@
 
         return decorator
     ```
+    
+</details>
 
 3. ООП:
     - Класс — это описание того, какими свойствами и поведением будет обладать объект. А объект — это экземпляр с собственным состоянием этих свойств.
