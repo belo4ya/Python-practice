@@ -1,6 +1,6 @@
 """
 Реализация сортировки пузырьком на чистом Python.
-https://en.wikipedia.org/wiki/Bubble_sort
+https://ru.wikipedia.org/wiki/Сортировка_пузырьком
 """
 
 
